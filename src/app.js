@@ -8,20 +8,9 @@ app.post("/hai", (req, res) => {
     res.send("data saved successfully...");
 });
 
-app.get("/hai", (req, res) => {
+app.get("/hai/:userid/:place", (req, res) => {
+    console.log(req.params);
     res.send({ firstName : "absham", lastName : "abshu"});
-});
-
-app.put("/hai", (req, res) => {
-    res.send("data changed successfully");
-});
-
-app.delete("/hai", (req, res) => {
-    res.send("all the data deleted successfully...");
-});
-
-app.use("/hai", (req, res) => {
-    res.send("HAHAHAHAHAHAHAHAAHAHA.....");
 });
 
 app.listen(3000, ()=> {
