@@ -2,19 +2,11 @@ const express = require("express"); // import express
 
 const app = express(); // calling the express function. 
 
-// handling the requests
+const { adminAuth } = require("./middlewares/admin.js");
 
-app.get("/hai", (req, res, next) => {
-    console.log("hai");
-    //res.send("data saved successfully...");
-    next()
-});
-
-app.get("/hai", (req, res, next) => {
-    console.log("abc");
-    res.send("second route handler...!");
+app.get("/admin/auth", adminAuth, (req, res) => {
+    res.send("authendicate successfully...");
 })
-
 
 app.listen(3000, () => {
     console.log("server started, listening on port no 3000...");
